@@ -1,4 +1,6 @@
-export const pokemons = [
+import { PokemonDetail } from "./types";
+
+export const pokemons: PokemonDetail[] = [
   {
     id: 25,
     name: "pikachu",

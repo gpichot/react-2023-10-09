@@ -1,22 +1,25 @@
-export type PokemonType =
-  | "bug"
-  | "dark"
-  | "dragon"
-  | "electric"
-  | "fairy"
-  | "fighting"
-  | "fire"
-  | "flying"
-  | "ghost"
-  | "grass"
-  | "ground"
-  | "ice"
-  | "normal"
-  | "poison"
-  | "psychic"
-  | "rock"
-  | "steel"
-  | "water";
+const PokemonTypes = [
+  "bug",
+  "dark",
+  "dragon",
+  "electric",
+  "fairy",
+  "fighting",
+  "fire",
+  "flying",
+  "ghost",
+  "grass",
+  "ground",
+  "ice",
+  "normal",
+  "poison",
+  "psychic",
+  "rock",
+  "steel",
+  "water",
+] as const;
+
+export type PokemonType = (typeof PokemonTypes)[number];
 
 export type PokemonDetail = {
   id: number | string;
@@ -36,4 +39,11 @@ export type PokemonDetail = {
     "special-defense": number;
     speed: number;
   };
+};
+
+export type PokemonCreatePayload = {
+  name: string;
+  type: string;
+  weight: number;
+  height: number;
 };

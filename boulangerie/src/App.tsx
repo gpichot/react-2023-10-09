@@ -24,7 +24,7 @@ const produits: Produit[] = [
   },
 ];
 
-console.log(styles);
+const router = createBrowserRouter([]);
 
 function App() {
   return (

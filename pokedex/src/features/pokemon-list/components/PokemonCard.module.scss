@@ -9,15 +9,8 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  p {
-    color: blue;
-  }
-  .card-title {
-    color: blue;
-  }
-}
-.card-title {
-  font-weight: bold;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -35,6 +28,11 @@
 .info h3 {
   margin: 0;
   font-size: 1.5rem;
-  font-weight: 600;
   text-transform: capitalize;
+}
+.badge {
+  display: inline-block;
+  color: black;
+  padding: 0.25em 0.4em;
+  border-radius: 0.25rem;
 }

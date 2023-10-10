@@ -1,0 +1,19 @@
+.control {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+
+  input {
+    height: 2rem;
+    border-radius: 0.25rem;
+    background-color: #f2f2f2;
+    outline: none;
+    border: none;
+    color: #333;
+    padding: 0 0.5rem;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+    }
+  }
+}
