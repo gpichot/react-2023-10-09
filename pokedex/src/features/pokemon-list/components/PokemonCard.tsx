@@ -3,6 +3,7 @@ import { PokemonDetail, PokemonType } from "../types";
 import classNames from "classnames";
 
 import styles from "./PokemonCard.module.scss";
+import { usePokedexContext } from "../PokedexContext";
 
 export interface PokemonCardProps {
   pokemon: PokemonDetail;
@@ -76,8 +77,19 @@ function PokemonTypeBadge(props: { type: PokemonType }) {
 export default function PokemonCard(props: PokemonCardProps) {
   const { pokemon } = props;
   const [isHovered, setIsHovered] = React.useState(false);
+  const pokedex = usePokedexContext();
 
   const gradient = createLinearGradientTypes(pokemon.types);
+
+  const isCaptured = pokedex.pokemonIds.includes(pokemon.id);
+  const handleCapture = () => {
+    if (isCaptured) {
+      pokedex.removePokemon(pokemon.id);
+    } else {
+      pokedex.addPokemon(pokemon.id);
+    }
+  };
+
   return (
     <div
       className={classNames(styles.card, {
@@ -105,6 +117,9 @@ export default function PokemonCard(props: PokemonCardProps) {
         </div>
       </div>
       <Stats stats={pokemon.stats} />
+      <button onClick={() => handleCapture()}>
+        {isCaptured ? "Libérer" : "Capturer"}
+      </button>
     </div>
   );
 }

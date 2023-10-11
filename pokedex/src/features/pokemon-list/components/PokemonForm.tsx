@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputControl from "./InputControl";
 import { usePokemonCreateMutation } from "../mutations";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 export default function PokemonForm() {
   const [name, setName] = useState("");

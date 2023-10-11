@@ -4,6 +4,7 @@ import styles from "./InputControl.module.scss";
 
 export interface InputControlProps
   extends React.ComponentPropsWithoutRef<"input"> {
+  /** Label de l'input */
   label: string;
 }
 
