@@ -1,0 +1,11 @@
+.list-container{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.list-buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0 0 0;
+}

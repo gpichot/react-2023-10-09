@@ -1,0 +1,167 @@
+.pokemonCard {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    width: 100%;
+    max-width: 500px;
+    padding: 16px 24px 16px 0 /* Because of the image padding*/;
+    text-align: left;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.4s ease-in-out, margin-left 0.2s ease-in-out;
+
+    img {
+        float: left;
+        width: 110px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .details {
+        flex-grow: 1;
+
+        .header {
+            display: flex;
+            align-items: baseline;
+
+            .title {
+                margin: 0;
+                text-transform: lowercase;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                &:first-letter {
+                    text-transform: uppercase;
+                }
+
+            }
+            .types {
+                margin: 0;
+                margin-left: 14px;
+                padding-left: 0;
+                display: flex;
+                justify-content: start;
+                list-style: none;
+
+                li {
+                    padding: 4px 10px;
+                    font-size: 0.8em;
+                    white-space: nowrap;
+                    background-color: #f9f9f9;
+                    border-radius: 8px;
+                    box-shadow: inset 0px 2px 4px 1px rgba(0, 0, 0, 0.05);
+
+                    &:first-letter {
+                        text-transform: uppercase;
+                    }
+                    &:not(:first-of-type) {
+                        margin-left: 6px;
+                    }
+
+                    .typeIcon {
+                        margin-right: 6px;
+                    }
+                }
+            }
+        }
+        .description {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+
+            .baseInfos {
+                flex-grow: 0.3;
+                .infos {
+                    padding-left: 0;
+                    list-style: none;
+
+                    li:not(:first-of-type) {
+                        margin-top: 6px;
+                    }
+                    .infoIcon {
+                        margin-right: 8px;
+                        color: #646262;
+                    }
+                }
+            }
+            .extraInfos {
+                flex-grow: 1;
+
+                .infos {
+                    padding-left: 0;
+                    list-style: none;
+                }
+                .stat {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    > span:first-of-type {
+                        width: 40%;
+                        //font-weight: bold;
+                        color: #292929;
+                    }
+                }
+                .statProgressbar {
+                    display: inline-flex;
+                    flex-grow: 1;
+                    height: 18px;
+                    overflow: hidden;
+                    margin-left: 8px;
+                    border-radius: 4px;
+                    background-color: #e4e4e4;
+                    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.08);
+                }
+                .statProgressbarFill {
+                    background-color: #6b946b;
+                }
+            }
+        }
+    }
+}
+
+// Should be in a dedicated component, but I'm too lazy right now
+:global(#pokecardsList) .pokemonCard:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+
+    img {
+        transform: translateX(-5px);
+    }
+}
+
+// TMP: Just for testing a new layout without changing everything
+.pokemonCard {
+    position: relative;
+    height: 262px;
+
+    img {
+        margin-top: 30px;
+        margin-left: 8px;
+    }
+
+    .details {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+
+        .header {
+            justify-content: space-between;
+        }
+
+        .description {
+            .baseInfos {
+                flex-grow: 0.4;
+
+                .infos {
+                    margin-top: 110px;
+                }
+            }
+            .extraInfos {
+                .infos {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}

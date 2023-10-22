@@ -1,0 +1,29 @@
+.pokeform {
+    width: 300px;
+    margin: 0 auto;
+}
+.pokeformContainer {
+    padding: 16px 24px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.mainButton {
+    background-color: #ff48a8;
+    color: #fffdfe;
+    transition: all 0.2s ease-in-out;
+
+    &:hover,
+    &:focus{
+        background-color: #da2484;
+        color: #fffdfe;
+    }
+    &:active {
+        background-color: #850b4b;
+        color: #fffdfe;
+    }
+    &:disabled {
+        background-color: #fddced;
+        color: #fffdfe;
+    }
+}

@@ -1,0 +1,51 @@
+
+.pokemon{
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 180px;
+  user-select: none;
+
+  &.hovered{
+    transform: scale(1.05);
+
+    a{
+      display: inline-block;
+    }
+  }
+
+  .title{
+    color: black;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+  }
+
+  .type{
+    background-color: rgba(0, 0, 0, 0.32);
+    border-radius: 8px;
+    margin: 5px;
+    padding: 2px 10px;
+    font-variant: all-petite-caps;
+  }
+
+  .count{
+    margin-top: 10px;
+    color: black;
+    font-size: .8rem;
+  }
+
+  a{
+    background-color: #f2bb4b;
+    position: absolute;
+    color: white;
+    right: 0px;
+    top: 50%;
+    display: none;
+    padding: 5px 10px;
+  }
+
+  a:hover{
+    color: white;
+  }
+}

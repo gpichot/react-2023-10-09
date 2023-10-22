@@ -1,0 +1,22 @@
+.inputControl{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+}
+.inputControl ~ .inputControl{
+    margin-top: 20px;
+}
+.input{
+    flex-grow: 1;
+    width: 100%;
+    padding: 4px;
+    margin-left: 50px;
+}
+.label{
+    width: 15% ;
+}
+.labelRequired::after{
+    content: '*';
+    color: red;
+}
